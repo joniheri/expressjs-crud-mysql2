@@ -7,7 +7,12 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
     <title>Hello, this is index</title>
   </head>
@@ -23,48 +28,30 @@
             </div>
           </div>
           <div class="row">
+            <!-- ReadData -->
+
+            <% if (data.length){ let no =0; for(let i = 0; i< data.length; i++){
+            no++; %>
             <div class="col-3">
               <div class="card">
-                <img src="img/kering6.jpg" class="card-img-top" alt="pepes" />
+                <img
+                  src="<%= data[i].image%>"
+                  class="card-img-top"
+                  alt="pepes"
+                  style="width: auto; height: 200px; object-fit: cover"
+                />
                 <div class="card-body">
-                  <h5 class="card-title">pepes</h5>
-                  <p class="card-text">Stok :</p>
-                  <a href="#" class="btn btn-primary">buy</a>
+                  <h5 class="card-title"><%= data[i].name%></h5>
+                  <p class="card-text">Stok : <%= data[i].stock%></p>
+                  <a href="/edit/<%= data[i].id%>" class="btn btn-primary"
+                    >buy</a
+                  >
                 </div>
               </div>
             </div>
 
-            <div class="col-3">
-              <div class="card">
-                <img src="img/kering6.jpg" class="card-img-top" alt="pepes" />
-                <div class="card-body">
-                  <h5 class="card-title">pepes</h5>
-                  <p class="card-text">Stok :</p>
-                  <a href="#" class="btn btn-primary">buy</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-3">
-              <div class="card">
-                <img src="img/kering6.jpg" class="card-img-top" alt="pepes" />
-                <div class="card-body">
-                  <h5 class="card-title">pepes</h5>
-                  <p class="card-text">Stok :</p>
-                  <a href="#" class="btn btn-primary">buy</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="card">
-                <img src="img/kering6.jpg" class="card-img-top" alt="pepes" />
-                <div class="card-body">
-                  <h5 class="card-title">pepes</h5>
-                  <p class="card-text">Stok :</p>
-                  <a href="#" class="btn btn-primary">buy</a>
-                </div>
-              </div>
-            </div>
+            <% } } %>
+            <!-- EndReadData -->
           </div>
         </div>
       </section>
@@ -123,6 +110,10 @@
         </div>
       </section>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
