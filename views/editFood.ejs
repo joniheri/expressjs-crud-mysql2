@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit-Food</title>
+    <%-include('./component/bootstrap.ejs') %>
+    <link rel="stylesheet" href="stylesheet/style.css" />
+  </head>
+  <body>
+    <%- include("./component/navbar.ejs") %>
+    <div
+      style="
+        width: 500px;
+        padding: 50px;
+        background-color: rgb(163, 146, 146);
+        margin: 30px auto;
+        border-radius: 8px;
+      "
+    >
+      <h2 class="text-center">Edit Foods</h2>
+      <% if (data.length){ let no =0; for(let i = 0; i< data.length; i++){ no++;
+      %>
+      <form action="/process-edit-food/<%= data[i].id%>" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label"> Name</label>
+          <input
+            type="hidden"
+            class="form-control"
+            name="id"
+            id="name"
+            value="<%= data[i].id%>"
+          />
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            value="<%= data[i].name%>"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="stok" class="form-label">Stok</label>
+          <input
+            type="number"
+            class="form-control"
+            name="stok"
+            id="stok"
+            value="<%= data[i].stock%>"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">image</label>
+          <input
+            type="text"
+            class="form-control"
+            name="image"
+            id="image"
+            value="<%= data[i].image%>"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="description"
+            value="<%= data[i].deskripsi%>"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary d-flex mx-auto">
+          Submit
+        </button>
+      </form>
+      <% }} %>
+    </div>
+  </body>
+</html>

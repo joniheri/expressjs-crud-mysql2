@@ -12,28 +12,42 @@
     <%- include("./component/navbar.ejs") %>
     <div class="container-foods">
       <h2 class="text-center">Add Foods</h2>
-      <form action="POST">
+      <form action="/process-add-food" method="POST">
         <div class="mb-3">
           <label for="name" class="form-label"> Name</label>
-          <input type="text" class="form-control" id="name" />
+          <input type="text" class="form-control" name="name" id="name" />
         </div>
         <div class="mb-3">
           <label for="stok" class="form-label">Stok</label>
-          <input type="text" class="form-control" id="stok" />
+          <input type="number" class="form-control" name="stok" id="stok" />
         </div>
         <div class="mb-3">
           <label for="image" class="form-label">image</label>
-          <input type="text" class="form-control" id="image" />
+          <input type="text" class="form-control" name="image" id="image" />
         </div>
         <div class="mb-3">
           <label for="description" class="form-label">Description</label>
-          <input type="text" class="form-control" id="description" />
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="description"
+          />
         </div>
         <div class="mb-3">
           <label for="category" class="form-label">Category</label>
-          <input type="text" class="form-control" id="category" />
+          <select class="form-control" name="categori_id" id="categori_id">
+            <% if (data.length){ let no =0; for(let i = 0; i< data.length; i++){
+            no++; %>
+            <option value="<%= data[i].id%>">
+              <%= data[i].id%> - <%= data[i].name%>
+            </option>
+            <% }} %>
+          </select>
         </div>
-        <button type="submit" class="btn btn-primary d-flex mx-auto">Submit</button>
+        <button type="submit" class="btn btn-primary d-flex mx-auto">
+          Submit
+        </button>
       </form>
     </div>
   </body>

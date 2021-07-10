@@ -1,0 +1,27 @@
+SELECT tb_food.*, tb_categori.*
+FROM tb_food
+INNER JOIN tb_categori
+ON (tb_food.categori_id = tb_categori.id);
+===========================
+SELECT tb_food.*, tb_categori.name
+FROM tb_food
+INNER JOIN tb_categori
+ON (tb_food.categori_id = tb_categori.id);
+============================
+SELECT tb_food.*, tb_categori.name AS category_name
+FROM tb_food
+INNER JOIN tb_categori
+ON (tb_food.categori_id = tb_categori.id);
+===========================
+SELECT tb_food.*, tb_categori.name AS category_name
+FROM tb_food
+INNER JOIN tb_categori
+ON (tb_food.categori_id = tb_categori.id)
+WHERE tb_categori.name='Makanan Kering';
+===========================
+SELECT tb_food.*, tb_categori.name AS category_name
+FROM tb_food
+INNER JOIN tb_categori
+ON (tb_food.categori_id = tb_categori.id)
+WHERE tb_categori.name='Makanan Berkuah';
+

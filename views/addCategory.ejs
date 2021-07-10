@@ -11,12 +11,21 @@
   <body>
     <%- include("./component/navbar.ejs") %>
     <div class="container-category">
-      <form action="POST">
+      <form action="/process-add-category" method="POST">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Category Name</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          <label for="exampleInputEmail1" class="form-label"
+            >Category Name</label
+          >
+          <input
+            type="text"
+            name="category_name"
+            class="form-control"
+            placeholder="Enter Text"
+          />
         </div>
-        <button type="submit" class="btn btn-primary d-flex mx-auto">Submit</button>
+        <button type="submit" class="btn btn-primary d-flex mx-auto">
+          Submit
+        </button>
       </form>
     </div>
   </body>
