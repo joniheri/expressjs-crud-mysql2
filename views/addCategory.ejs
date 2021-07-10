@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add-Food</title>
+    <%-include('./component/bootstrap.ejs') %>
+    <link rel="stylesheet" href="stylesheet/style.css" />
+  </head>
+  <body>
+    <%- include("./component/navbar.ejs") %>
+    <div class="container-category">
+      <form action="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Category Name</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+        </div>
+        <button type="submit" class="btn btn-primary d-flex mx-auto">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
